@@ -1,6 +1,7 @@
 module Jesture
-  # yeah... I typed these in. another day in the life of a badass.
-
+  
+  # This maps associated modifier keys with their corresponding javascript
+  # event keys. 
   MODIFIERS = {
     :ctrl => "ctrlKey",
     :shift => "shiftKey",
@@ -8,6 +9,8 @@ module Jesture
     :meta => "metaKey"
   }
 
+  # This map associated key names with their corresponding event key code
+  # values.
   KEYMAP = {
     :backspace => 8,
     :tab => 9,

@@ -1,27 +1,40 @@
-# combo :foo, :left, :right, :left, :right
-# combo :bar, :up, :up, :up
-# combo :uppity, 38, 38, 38, 38
-# combo :konami, :up, :up, :down, :down, :left, :right, :left, :right, :b, :a, :enter
-# combo :epileptichrome, :ctrl_shift_s, :shift_alt_z
-# 
+#----------------------------------------------------------------------------------------------------
+# Combos define key sequences that should trigger actions. Key sequences can be defined in symbols,
+# key code numbers, or any combination of the two
+#----------------------------------------------------------------------------------------------------
+
+# combo :konami,            :up, :up, :down, :down, :left, :right, :left, :right, :b, :a, :enter
+# combo :find,              :ctrl_f
+# combo :ups,               38, 38, 38
+# combo :downs,             40, 40, 40
+# combo :lefts,             37, 37, 37
+# combo :rights,            39, 39, 39
+# combo :mix_and_match,     :ctrl_y, 38, :down
+
+
+
+#----------------------------------------------------------------------------------------------------
+# Jestures associate actions to combos.  Generally speaking, each jesture contains one presses
+# block, but if it makes sense to define a series of action-to-combo associations as a single 
+# set, jesture will accommodate that.
+#----------------------------------------------------------------------------------------------------
+
+# A simple inline javascript call.
 # jesture :fight do
-#   presses :foo do
-#     "document.body.innerHTML += 'Fight!'"
+#   presses :konami do
+#     "alert('Fight!');"
 #   end
 # end
-# 
-# jesture :color_change do
-#   presses :bar, "Foo.bar"
+
+# A call to an existing javascript function
+# jesture :invoke_find_dialog do
+#   presses :find, "myObj.myMethod"
 # end
-# 
-# jesture :complainer do
-#   presses :uppity, "alert('Eww! None of those here!')"
-# end
-# 
-# jesture :fantasy do
-#   presses :konami, "Foo.unicorns"
-# end
-# 
-# jesture :mood_light do
-#   presses :epileptichrome, "Foo.lsd"
+
+# Multiple mappings within a single jesture definition
+# jesture :arrow_keys do
+#   presses :ups,   "alert('three ups!');"
+#   presses :downs, "alert('three downs!');"
+#   presses :left,  "alert('three lefts!');"
+#   presses :right, "alert('three rights!');"
 # end
