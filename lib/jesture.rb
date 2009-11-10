@@ -153,19 +153,21 @@ module Jesture
             var charKey = seq[f.i].char_key,
                 modKeys = seq[f.i].mod_keys;
                 
-            if(charKey === evt.keyCode) {
-              if(!modKeys || modKeys.all(function(m) {return evt[m]})) {
+            /* if match and no mod keys required or match and all mod keys
+               included, advance sequence position; else reset */   
+            if (charKey === evt.keyCode) {
+              if (!modKeys || modKeys.all(function(m) {return evt[m]})) {
                 f.i++;
               } else {
                 f.i = 0;
               }
-            } else if (modKeys && modifierKeys.indexOf(evt.keyCode) == -1) {
-              /* here we've got a case where we don't want modKeys to
-                  reset the sequence because we're detecting them above
-                  here. */
+            } 
+            /* else, if no match and the mismatch wasn't caused by a required 
+               modifiers keydown event, reset */
+            else if (!modKeys || modifierKeys.indexOf(evt.keyCode) == -1) {
               f.i = 0;
             }
-          
+
             if(f.i === seq.length) {
               f.i = 0;
               #{call}
