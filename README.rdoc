@@ -1,0 +1,31 @@
+Jesture
+=======
+
+Jesture is a framework for mapping key sequences to javascript callbacks.  
+
+The framework can be used for functionality ranging from easter eggs to entire hot key menus. 
+
+
+Installation
+============
+
+Jesture is a standard Rails plugin.
+
+	script/plugin install git://github.com/membrain/jesture
+
+
+By default, Jesture copies a configuration file to your {RAILS_ROOT}/config directory.  All combos and jestures
+in this file are commented out, so it will not affect your application.
+
+
+Use
+===
+
+The DSL is designed to be self-explanatory.  Please view the contents of the default config file for 
+reasonable examples.  If you still have questions, please clone the example application.
+
+	git clone git://github.com/membrain/jesture-example
+	
+
+
+Copyright (c) 2009 MemBrain, released under the MIT license
