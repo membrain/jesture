@@ -33,8 +33,16 @@
 
 # Multiple mappings within a single jesture definition
 # jesture :arrow_keys do
-#   presses :ups,   "alert('three ups!');"
-#   presses :downs, "alert('three downs!');"
-#   presses :left,  "alert('three lefts!');"
-#   presses :right, "alert('three rights!');"
+#   presses :ups do
+#     "alert('three ups!');"
+#   end
+#   presses :downs do 
+#     "alert('three downs!');"
+#   end
+#   presses :lefts do 
+#     "alert('three lefts!');"
+#   end
+#   presses :rights do 
+#     "alert('three rights!');"
+#   end
 # end

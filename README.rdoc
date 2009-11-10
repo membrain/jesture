@@ -6,6 +6,7 @@ Jesture is a framework for mapping key sequences to javascript callbacks.
 The framework can be used for functionality ranging from easter eggs to entire hot key menus. 
 
 
+
 Installation
 ============
 
@@ -14,8 +15,12 @@ Jesture is a standard Rails plugin.
 	script/plugin install git://github.com/membrain/jesture
 
 
-By default, Jesture copies a configuration file to your {RAILS_ROOT}/config directory.  All combos and jestures
-in this file are commented out, so it will not affect your application.
+By default, Jesture should copy a configuration file to your {RAILS_ROOT}/config directory.  All combos and jestures
+in this file are commented out, so it will not affect your application.  If you wish to run this generator manually,
+use the following command.
+
+	script/generate jesture
+	
 
 
 Use
